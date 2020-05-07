@@ -30,19 +30,16 @@
         </div>
     </div>
     <div class="row map">
-        <div class="col-sm"><button onclick="est('form')" id="button1">Форма</button>
+        <div class="col-sm"><button onclick="est('form')" id="button1">Форма для добавления</button>
             <form id="form" >
                 <label for="ftype">Type:</label><br>
-                <select id="ftype"  name="ftype">
-                    <option>Выберите тип</option>
-                    <option>raion_commutator</option>
-                    <option>house_commutator</option>
-                    <option>home_router</option>
-                    <option>provider_server</option>
-                </select><br>
+                <input type="text" id="ftype" name="ftype"><br>
 
                 <label for="connect_id">connect_id:</label><br>
                 <input type="text" id="connect_id" name="connect_id"><br>
+
+                <label for="id">id:</label><br>
+                <input type="text" id="id" name="id"><br>
 
                 <label for="inf_count">Linf_count:</label><br>
                 <input type="text" id="inf_count" name="inf_count"><br>
@@ -58,7 +55,7 @@
 
                 <label for="on_off">on_off:</label><br>
                 <input type="text" id="on_off" name="on_off"><br>
-
+				
 				<label for="smotr">smotr:</label><br>
                 <input type="text" id="smotr" name="smotr"><br>
 
@@ -72,15 +69,9 @@
         </div>
         <div class="col-sm"><button onclick="est('form2')">Форма для редактирования</button>
             <form style="display: none" class="form-2" id="form2" >
-
+				
                 <label for="ftype2">Type:</label><br>
-                <select id="ftype2"  name="ftype2">
-                    <option>Выберите тип</option>
-                    <option>raion_commutator</option>
-                    <option>house_commutator</option>
-                    <option>home_router</option>
-                    <option>provider_server</option>
-                </select><br>
+                <input type="text" id="ftype2" name="ftype2"><br>
 
                 <label for="connect_id2">connect_id:</label><br>
                 <input type="text" id="connect_id2" name="connect_id2"><br>
@@ -102,11 +93,11 @@
 
                 <label for="on_off2">on_off:</label><br>
                 <input type="text" id="on_off2" name="on_off2"><br>
-
+				
 				 <label for="smotr2">smotr:</label><br>
                 <input type="text" id="smotr2" name="smotr2"><br>
 
-
+               
             </form>
 			 <button onclick="updateObjectOnMap()">Отправить</button>
 			 <button onclick="deleteObjectOnMap()">Удалить</button>
