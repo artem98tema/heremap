@@ -17,7 +17,7 @@
     <title>Title</title>
 </head>
 <body>
-<div class="container">
+<div class="container-fluid">
     <div class="row app-header">
         <div class="col-sm">
             One of three columns
@@ -29,13 +29,155 @@
             One of three columns
         </div>
     </div>
-    <div class="row">
-        <div class="col-sm">
+    <div class="row map">
+        <div class="col-sm"><button onclick="est('form')" id="button1">Форма</button>
+            <form id="form" >
+                <label for="ftype">Type:</label><br>
+                <select id="ftype"  name="ftype">
+                    <option>Выберите тип</option>
+                    <option>raion_commutator</option>
+                    <option>house_commutator</option>
+                    <option>home_router</option>
+                    <option>provider_server</option>
+                </select><br>
+
+                <label for="connect_id">connect_id:</label><br>
+                <input type="text" id="connect_id" name="connect_id"><br>
+
+                <label for="inf_count">Linf_count:</label><br>
+                <input type="text" id="inf_count" name="inf_count"><br>
+
+                <label for="lat">lat:</label><br>
+                <input type="text" id="lat" name="lat"><br>
+
+                <label for="lng">lng:</label><br>
+                <input type="text" id="lng" name="lng"><br>
+
+                <label for="model">model:</label><br>
+                <input type="text" id="model" name="model"><br>
+
+                <label for="on_off">on_off:</label><br>
+                <input type="text" id="on_off" name="on_off"><br>
+
+				<label for="smotr">smotr:</label><br>
+                <input type="text" id="smotr" name="smotr"><br>
+
+
+            </form>
+            <button onclick="addNewObjectOnMap()">Отправить</button>
+        </div>
+        <div class="col-sm-8">
             <div style="width: 100%; height: 480px" id="mapContainer"></div>
+            <button>Форма</button>
+        </div>
+        <div class="col-sm"><button onclick="est('form2')">Форма для редактирования</button>
+            <form style="display: none" class="form-2" id="form2" >
+
+                <label for="ftype2">Type:</label><br>
+                <select id="ftype2"  name="ftype2">
+                    <option>Выберите тип</option>
+                    <option>raion_commutator</option>
+                    <option>house_commutator</option>
+                    <option>home_router</option>
+                    <option>provider_server</option>
+                </select><br>
+
+                <label for="connect_id2">connect_id:</label><br>
+                <input type="text" id="connect_id2" name="connect_id2"><br>
+
+                <label for="id2">id:</label><br>
+                <input type="text" id="id2" name="id2"><br>
+
+                <label for="inf_count2">Linf_count:</label><br>
+                <input type="text" id="inf_count2" name="inf_count2"><br>
+
+                <label for="lat2">lat:</label><br>
+                <input type="text" id="lat2" name="lat2"><br>
+
+                <label for="lng2">lng:</label><br>
+                <input type="text" id="lng2" name="lng2"><br>
+
+                <label for="model2">model:</label><br>
+                <input type="text" id="model2" name="model2"><br>
+
+                <label for="on_off2">on_off:</label><br>
+                <input type="text" id="on_off2" name="on_off2"><br>
+
+				 <label for="smotr2">smotr:</label><br>
+                <input type="text" id="smotr2" name="smotr2"><br>
+
+
+            </form>
+			 <button onclick="updateObjectOnMap()">Отправить</button>
+			 <button onclick="deleteObjectOnMap()">Удалить</button>
         </div>
     </div>
 </div>
 
+<script>
+
+function est(id) {
+    var x = document.getElementById(id);
+    if (x.style.display === "none") {
+        x.style.display = "block";
+    } else {
+        x.style.display = "none";
+    }
+}
+    /*
+        // Initialize the platform object:
+        var platform = new H.service.Platform({
+            'apikey': '5guKdiSP9g3xCXY8sRbbea5KHsevzf_ytrnLQeJPSvM'
+        });
+
+        // Obtain the default map types from the platform object
+        var maptypes = platform.createDefaultLayers();
+
+        // Instantiate (and display) a map object:
+        var map = new H.Map(
+            document.getElementById('mapContainer'),
+            maptypes.vector.normal.map,
+            {
+                zoom: 10,
+                center: { lng:37.7575 , lat: 44.7236 }
+            });
+            */
+/*
+    function addSVGMarkers(map){
+        //Create the svg mark-up
+        var svgMarkup = '';
+
+        // Add the first marker
+        var bearsIcon = new H.map.Icon(
+            svgMarkup.replace('${FILL}', 'blue').replace('${STROKE}', 'red')),
+            bearsMarker = new H.map.Marker({lat:52.5166, lng:13.3833 },
+                {icon: bearsIcon});
+
+        map.addObject(bearsMarker);
+
+        // Add the second marker.
+
+    }
+*/
+/*
+    function addMarkersToMap(map) {
+
+       // var berlinMarker = new H.map.Marker({lat:52.5166, lng:13.3833});
+	   var berlinMarker = new H.map.Marker({lng:37.7575 , lat: 44.7236});
+        map.addObject(berlinMarker);
+
+    }
+
+
+    var behavior = new H.mapevents.Behavior(new H.mapevents.MapEvents(map));
+
+    window.onload = function () {
+        addMarkersToMap(map);
+
+    }
+	*/
+   // addSVGMarkers(map);
+</script>
 <script src="./index.js"></script>
 <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
