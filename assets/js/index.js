@@ -437,7 +437,7 @@ function showHomeRoutersTable(commutatorId)
 		var jsonData = JSON.parse(xhr.responseText);
 		for (var i = 0; i < jsonData.length; i++) {
 			//resultText += '<tr><th scope="row"><small>' + jsonData[i].on_off + '</th><td><small>' + jsonData[i].id +'</td><td><small>' + jsonData[i].model + '</td></small><tr>';
-			resultText += '<tr><td>' + jsonData[i].on_off + '</td><td>' + jsonData[i].id +'</td><td>' + jsonData[i].model + '</td></tr>';
+			resultText += '<tr><td style="border-bottom: 1px solid black;width: 10%;border-right: 1px solid black;text-align: center;">' + jsonData[i].on_off + '</td><td style="width: 10%;border-bottom: 1px solid black;border-right: 1px solid black;text-align: center;">' + jsonData[i].id +'</td><td style="border-bottom: 1px solid black">' + jsonData[i].model + '</td></tr>';
 		}
 		$('#clientList').html(resultText);
 		$("#myTable1").trigger('updateCache');
