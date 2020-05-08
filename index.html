@@ -58,7 +58,7 @@
         form{
             padding-left: 80px;
             background:rgba(229, 229, 229, 1);
-            width: 350px;
+            width: 330px;
             border-radius: 8px;
         }
 
@@ -87,6 +87,9 @@
         a:hover{
             text-decoration: none;
             color:white ;
+        }
+        #mapContainer{
+            height: calc(100vh-90px);
         }
     </style>
     <title>Title</title>
@@ -130,42 +133,9 @@
 
     </header>
     <div class="row map">
-<!--        <div class="col-sm">-->
-<!--            <button  onclick="est('form')" id="button1">Форма для добавления</button>-->
-<!--            <form  id="form" >-->
-<!--                <label for="ftype">Type:</label><br>-->
-<!--                <input type="text" id="ftype" name="ftype"><br>-->
 
-<!--                <label for="connect_id">connect_id:</label><br>-->
-<!--                <input type="text" id="connect_id" name="connect_id"><br>-->
-
-<!--                <label for="id">id:</label><br>-->
-<!--                <input type="text" id="id" name="id"><br>-->
-
-<!--                <label for="inf_count">Linf_count:</label><br>-->
-<!--                <input type="text" id="inf_count" name="inf_count"><br>-->
-
-<!--                <label for="lat">lat:</label><br>-->
-<!--                <input type="text" id="lat" name="lat"><br>-->
-
-<!--                <label for="lng">lng:</label><br>-->
-<!--                <input type="text" id="lng" name="lng"><br>-->
-
-<!--                <label for="model">model:</label><br>-->
-<!--                <input type="text" id="model" name="model"><br>-->
-
-<!--                <label for="on_off">on_off:</label><br>-->
-<!--                <input type="text" id="on_off" name="on_off"><br>-->
-
-<!--				<label for="smotr">smotr:</label><br>-->
-<!--                <input type="text" id="smotr" name="smotr"><br>-->
-
-
-<!--            </form>-->
-<!--            <button onclick="addNewObjectOnMap()">Отправить</button>-->
-<!--        </div>-->
         <div  class="col-sm">
-            <div style="position: fixed;z-index: 10;left: 100px;top: 90px;display: none;padding-top: 18px;padding-bottom: 18px;margin-top: 5px" id="tes" class="try">
+            <div style="position: fixed;overflow: auto;height: 80vh;z-index: 10;left: 100px;top: 90px;display: none;padding-top: 18px;padding-bottom: 18px;margin-top: 5px" id="tes" class="try">
                 <div style="display: flex;justify-content: space-around">
                     <img style="display: inline" src="assets/image/Frame.png">
                     <p style="margin-bottom: 15px;display: inline;">Добавить устройство</p>
@@ -210,10 +180,10 @@
                     </select><br>
 				            <label for="smotr">Ответственный:</label><br>
                           <input type="text" id="smotr" name="smotr"><br>
-						  
+
 						  <label for="cabelType">Тип кабеля:</label><br>
                           <input type="text" id="cabelType" name="cabelType"><br>
-						  
+
 						  <label for="connectType">Тип соединения:</label><br>
                           <input type="text" id="connectType" name="connectType"><br>
 
@@ -228,15 +198,41 @@
             </div>
             <a onclick="show()" id="add-button" style="" href="#"><img  style="position: fixed;top: 120px;left: 105px;z-index: 10;" src="assets/image/Button_add.png"></a>
 
-            <div style="width: 100%; height:  650px" id="mapContainer"></div>
+            <div style="width: 100%; height:  650px;" id="mapContainer"></div>
 
+
+            <div style="background: #999999;width: 400px;position: fixed;z-index: 10;right: 300px;top: 10px;display: block;padding-top: 18px;padding-bottom: 18px;margin-top: 5px;border-radius: 9px" class="panel panel-default">
+                <table style="display: flex"  id="myTable1" class="table table-responsive tablesorter">
+                    <div>
+                        <img style="display: inline" src="assets/image/building-regular%201.png">
+                        <div style="display: inline">
+                            <p style="display: inline">Список устройств в доме по адресу:</p>
+                        </div>
+
+                        <a href="#"><img style="display: inline" src="assets/image/exit.png"></a>
+                    </div>
+
+                    <thead style="width:  100%">
+                    <tr style="display: flex;justify-content: space-between;width: 100%">
+                        <th style="width: 20%" id="th1"><small>Тип</small></th>
+                        <th style="width: 20%" id="th2"><small>Id</small></th>
+                        <th style="width: 60%" id="th3"><small>Модель</small></th>
+                    </tr>
+                    </thead>
+                    <tbody id="clientList">
+                    <tr>
+                        <td colspan="3"><i class="fa fa-spinner fa-spin"></i></td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
             <div style="position: fixed;z-index: 10;right: 100px;top: 10px;display: block;padding-top: 18px;padding-bottom: 18px;margin-top: 5px" id="form22" class="form2">
 <!--                <div style="display: flex;justify-content: space-around">-->
 <!--                    <img style="display: inline" src="assets/image/Group%201.png">-->
 <!--                    <p style="margin-bottom: 15px;display: inline;">Изменить данные</p>-->
 <!--                    <a onclick="hide()" href="#"><img src="assets/image/exit.png"></a>-->
 <!--                </div>-->
-                <form style="display: none;padding-bottom: 18px;padding-top: 18px" class="form-2" id="form2" >
+                <form style="display: none;overflow: auto;height: 80vh;padding-bottom: 18px;padding-top: 18px" class="form-2" id="form2" >
                     <div style="display: flex;justify-content: space-around;margin-left: -80px">
                         <img style="display: inline" src="assets/image/Group%201.png">
                         <p style="margin-bottom: 15px;display: inline;">Изменить данные</p>
@@ -284,16 +280,16 @@
 
                     <label for="smotr2">Ответственный:</label><br>
                     <input type="text" id="smotr2" name="smotr2"><br>
-					
+
 					<label for="cabelType2">Тип кабеля:</label><br>
                     <input type="text" id="cabelType2" name="cabelType2"><br>
-						  
+
 					<label for="connectType2">Тип соединения:</label><br>
                     <input type="text" id="connectType2" name="connectType2"><br>
-					
+
                     <div style="margin-left: -30px;" >
-                        <a onclick="updateObjectOnMap()" style="padding: 6px;background: rgb(92 ,92, 92);border-radius: 9px" href="#">Изменить <img style="margin-left: 5px;margin-right: 5px" src="assets/image/pencil-alt-solid%201.png"></a>
-                        <a onclick="deleteObjectOnMap()" style="padding: 6px;background: rgb(92 ,92, 92);border-radius: 9px" href="#">Удалить <img style="margin-left: 5px;margin-right: 5px" src="assets/image/Vector%20(1).png"></a>
+                        <a onclick="updateObjectOnMap()" style="padding: 4px;background: rgb(92 ,92, 92);border-radius: 9px" href="#">Изменить <img style="margin-left: 5px;margin-right: 5px" src="assets/image/pencil-alt-solid%201.png"></a>
+                        <a onclick="deleteObjectOnMap()" style="padding: 4px;background: rgb(92 ,92, 92);border-radius: 9px" href="#">Удалить <img style="margin-left: 5px;margin-right: 5px" src="assets/image/Vector%20(1).png"></a>
 
 
                     </div>
@@ -309,6 +305,11 @@
             </div>
         </div>
 
+    </div>
+    <div class="row">
+        <div class="col-md-12 col-sm-6">
+
+        </div>
     </div>
 </div>
 
@@ -341,59 +342,8 @@ function show() {
         ;
     }
 }
-    /*
-        // Initialize the platform object:
-        var platform = new H.service.Platform({
-            'apikey': '5guKdiSP9g3xCXY8sRbbea5KHsevzf_ytrnLQeJPSvM'
-        });
-
-        // Obtain the default map types from the platform object
-        var maptypes = platform.createDefaultLayers();
-
-        // Instantiate (and display) a map object:
-        var map = new H.Map(
-            document.getElementById('mapContainer'),
-            maptypes.vector.normal.map,
-            {
-                zoom: 10,
-                center: { lng:37.7575 , lat: 44.7236 }
-            });
-            */
-/*
-    function addSVGMarkers(map){
-        //Create the svg mark-up
-        var svgMarkup = '';
-
-        // Add the first marker
-        var bearsIcon = new H.map.Icon(
-            svgMarkup.replace('${FILL}', 'blue').replace('${STROKE}', 'red')),
-            bearsMarker = new H.map.Marker({lat:52.5166, lng:13.3833 },
-                {icon: bearsIcon});
-
-        map.addObject(bearsMarker);
-
-        // Add the second marker.
-
-    }
-*/
-/*
-    function addMarkersToMap(map) {
-
-       // var berlinMarker = new H.map.Marker({lat:52.5166, lng:13.3833});
-	   var berlinMarker = new H.map.Marker({lng:37.7575 , lat: 44.7236});
-        map.addObject(berlinMarker);
-
-    }
 
 
-    var behavior = new H.mapevents.Behavior(new H.mapevents.MapEvents(map));
-
-    window.onload = function () {
-        addMarkersToMap(map);
-
-    }
-	*/
-   // addSVGMarkers(map);
 </script>
 <script src="assets/js/index.js"></script>
 <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
