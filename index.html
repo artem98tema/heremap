@@ -200,9 +200,8 @@
 
             <div style="width: 100%; height:  650px;" id="mapContainer"></div>
 
-
             <div style="background: #999999;width: 400px;position: fixed;z-index: 10;right: 600px;top: 10px;display: none;padding-top: 18px;padding-bottom: 18px;margin-top: 5px;border-radius: 9px" id="panel" class="panel panel-default">
-                <table style="display: flex"  id="myTable1" class="table table-responsive tablesorter">
+              <!--  <table style="display: flex"  id="myTable1" class="table table-responsive tablesorter">
                     <div>
                         <img style="display: inline" src="assets/image/building-regular%201.png">
                         <div style="display: inline">
@@ -213,19 +212,34 @@
                     </div>
 
                     <thead style="width:  100%">
-                    <tr style="display: flex;justify-content: space-between;width: 100%">
-                        <th style="width: 20%" id="th1"><small>Тип</small></th>
-                        <th style="width: 20%" id="th2"><small>Id</small></th>
-                        <th style="width: 60%" id="th3"><small>Модель</small></th>
-                    </tr>
+						<tr style="display: flex;justify-content: space-between;width: 100%">
+							<th style="width: 20%" id="th1"><small>Тип</small></th>
+							<th style="width: 20%" id="th2"><small>Id</small></th>
+							<th style="width: 60%" id="th3"><small>Модель</small></th>
+						</tr>
                     </thead>
                     <tbody id="clientList">
-                    <tr>
-                        <td colspan="3"><i class="fa fa-spinner fa-spin"></i></td>
-                    </tr>
+						<tr>
+							<td colspan="3"><i class="fa"></i></td>
+							<tr>1</tr>
+							<tr>2</tr>
+						</tr>
                     </tbody>
                 </table>
+				-->
+				<table id="myTable1">
+				<thead><tr><th>Power</th><th>ID</th><th>Модель</th></tr></thead> <!--ряд с ячейками заголовков-->
+                    <tbody id="clientList">
+					<!--
+                    <tr><td>данные</td><td>данные</td><td>данные</td></tr>
+                    <tr><td>данные</td><td>данные</td><td>данные</td></tr>
+					-->
+                    </tbody> <!--ряд с ячейками тела таблицы-->
+                    <!--ряд с ячейками тела таблицы-->
+                </table>
             </div>
+
+			
             <div style="position: fixed;z-index: 10;right: 100px;top: 10px;display: block;padding-top: 18px;padding-bottom: 18px;margin-top: 5px" id="form22" class="form2">
 <!--                <div style="display: flex;justify-content: space-around">-->
 <!--                    <img style="display: inline" src="assets/image/Group%201.png">-->
@@ -268,11 +282,7 @@
 
                     <label for="on_off2">вкл/выкл:</label><br>
                     <select  style="width: 182px;border-radius:8px" id="on_off2" name="on_off2">
-<<<<<<< HEAD
-                        <option>выберите</option>
-=======
                         <option>Выберите</option>
->>>>>>> master
                         <option>1</option>
                         <option>0</option>
                     </select><br>
