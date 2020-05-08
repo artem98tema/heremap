@@ -37,7 +37,12 @@ lng('http://aumsuhere.tmweb.ru/api/db/view_routers')
         console.log(data)
     });
 	
-
+lng('http://aumsuhere.tmweb.ru/api/db/view_home_routers')
+    .then((data)=>{
+        console.log(data)
+    });
+	
+	
 //------------------------------------------------------------------------------------------
 
  // Initialize the platform object:
@@ -321,7 +326,7 @@ function addNewObjectOnMap()
 	
 	if(($('#ftype').val() == '') || ($('#connect_id').val() == '') || ($('#inf_count').val() == '') || ($('#lat').val() == '') 
 		|| ($('#lng').val() == '') || ($('#model').val() == '') || ($('#on_off').val() == '') || ($('#smotr').val() == '')
-	|| ($('#on_off').val() == 'Выберите') || ($('#ftype').val() == 'Выберите') )
+	|| ($('#on_off').val() == 'Выберите') || ($('#ftype').val() == 'Выберите') || ($('#cabelType').val() == '') || ($('#connectType').val() == ''))
 	{
 		alert("НЕ ВСЕ ПОЛЯ ЗАПОЛНЕНЫ!!!");
 		return;
@@ -336,6 +341,8 @@ function addNewObjectOnMap()
 	  Type: $('#ftype').val(),
 	  inf_count: $('#inf_count').val(),
 	  smotr: $('#smotr').val(),
+	  type_of_cabel: $('#cabelType').val(),
+	  type_of_connection: $('#connectType').val(),
 	});
 	
 	var xhr = new XMLHttpRequest();
@@ -358,7 +365,7 @@ function updateObjectOnMap()
 {
 	if(($('#ftype2').val() == '') || ($('#connect_id2').val() == '') || ($('#inf_count2').val() == '') || ($('#lat2').val() == '') 
 		|| ($('#lng2').val() == '') || ($('#model2').val() == '') || ($('#on_off2').val() == '') || ($('#id2').val() == '') || ($('#smotr2').val() == '') 
-	|| ($('#on_off2').val() == 'Выберите') || ($('#ftype2').val() == 'Выберите') )
+	|| ($('#on_off2').val() == 'Выберите') || ($('#ftype2').val() == 'Выберите') || ($('#cabelType2').val() == '') || ($('#connectType2').val() == '') )
 	{
 		alert("НЕ ВСЕ ПОЛЯ ЗАПОЛНЕНЫ!!!");
 		return;
@@ -374,6 +381,8 @@ function updateObjectOnMap()
 	  inf_count: $('#inf_count2').val(),
 	  smotr: $('#smotr2').val(),
 	  id: $('#id2').val(),
+	  type_of_cabel: $('#cabelType2').val(),
+	  type_of_connection: $('#connectType2').val(),
 	});
 	
 	var xhr = new XMLHttpRequest();
@@ -412,6 +421,26 @@ function deleteObjectOnMap()
 	
 	}
 }
+
+function showHomeRoutersTable(commutatorId)
+{
+	var xhr = new XMLHttpRequest();
+	xhr.open('GET', 'http://aumsuhere.tmweb.ru/api/db/view_home_routers?connect_id=' + commutatorId, false);
+	xhr.send();
+	if (xhr.status != 200) {
+		alert( xhr.status + ': ' + xhr.statusText ); // пример вывода: 404: Not Found
+	} 	
+	else {
+		var resultText = '';
+		var jsonData = JSON.parse(xhr.responseText);
+		for (var i = 0; i < jsonData.length; i++) {
+			resultText += '<tr><th scope="row"><small>' + jsonData[i].id + '</th><td><small>' + jsonData[i].model +'</td><td><small>' + jsonData[i].on_off + '</td></small><tr>';
+		}
+		$('#someTableBody').html(resultText);
+		$("#myTable1").trigger('updateCache');
+	}
+}
+
 
 //http://aumsuhere.tmweb.ru/api/db/delete_by_id/84
 	
