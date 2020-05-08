@@ -67,6 +67,7 @@ function addMarkersToMap(map) {
 	  var lineString = [];
 	  var lineHierarchy = 4;
 	  var color = 'blue';
+	  var textMarker = 'M';
 	  
 		
 		
@@ -144,37 +145,49 @@ function addMarkersToMap(map) {
 					case 1: color = 'green'; break;
 					default: break;
 				}
-				addDOMMarker(map, color, counter.lng, counter.lat, counter.id, counter.model, counter.connect_id, counter.on_off, counter.Type, counter.inf_count, counter.smotr);
-				if (!(counter.connect_id == 0))
+				//------------------------
+				switch(counter.Type)
 				{
-					lineString[i] = new H.geo.LineString();
-					lineString[i].pushPoint({lng:counter.lng, lat:counter.lat});
-					
-					for (var j = 0; j<jsonData.length; j++)
+					case 'provider_server': textMarker = 'ps'; break;
+					case 'raion_commutator': textMarker = 'rc'; break;
+					case 'house_commutator': textMarker = 'hc'; break;
+					//case 'home_router': textMarker = 'hr'; break;
+					default: break;
+				}
+				if (!(counter.Type == 'home_router'))
+				{
+					addDOMMarker(map, color, counter.lng, counter.lat, counter.id, counter.model, counter.connect_id, counter.on_off, counter.Type, counter.inf_count, counter.smotr, textMarker);
+					if (!(counter.connect_id == 0))
 					{
-						var connecter = jsonData[j];
-						//console.log("New check: " + connecter.id + " and " + counter.connect_id);
-						if(connecter.id == counter.connect_id)
+						lineString[i] = new H.geo.LineString();
+						lineString[i].pushPoint({lng:counter.lng, lat:counter.lat});
+						
+						for (var j = 0; j<jsonData.length; j++)
 						{
-							//console.log("Found connection between " + connecter.id + " and " + counter.connect_id);
-							lineString[i].pushPoint({lng:connecter.lng, lat:connecter.lat});
-							switch(counter.Type)
+							var connecter = jsonData[j];
+							//console.log("New check: " + connecter.id + " and " + counter.connect_id);
+							if(connecter.id == counter.connect_id)
 							{
-								case 'raion_commutator': lineHierarchy = 8; break;
-								case 'house_commutator': lineHierarchy = 4; break;
-								case 'home_router': lineHierarchy = 2; break;
-								default: break;
+								//console.log("Found connection between " + connecter.id + " and " + counter.connect_id);
+								lineString[i].pushPoint({lng:connecter.lng, lat:connecter.lat});
+								switch(counter.Type)
+								{
+									case 'raion_commutator': lineHierarchy = 8; break;
+									case 'house_commutator': lineHierarchy = 4; break;
+									case 'home_router': lineHierarchy = 2; break;
+									default: break;
+								}
+								map.addObject(new H.map.Polyline(lineString[i], { style: { lineWidth: lineHierarchy }}));
 							}
-							map.addObject(new H.map.Polyline(lineString[i], { style: { lineWidth: lineHierarchy }}));
-						}
-					}		
+						}		
+					}
 				}
 			}			
 		}	
     }
 	
 	
-function addDOMMarker(map, color, lngARG, latARG, idARG, modelARG, connect_idARG, on_offARG, ftypeARG, inf_countARG, smotrARG)
+function addDOMMarker(map, color, lngARG, latARG, idARG, modelARG, connect_idARG, on_offARG, ftypeARG, inf_countARG, smotrARG, textMarker)
 {
 	var outerElement = document.createElement('div'),
 	innerElement = document.createElement('div');
@@ -185,7 +198,7 @@ function addDOMMarker(map, color, lngARG, latARG, idARG, modelARG, connect_idARG
 	outerElement.style.mozUserSelect = 'none';
 	outerElement.style.cursor = 'default';
 
-	innerElement.style.color = 'red';
+	innerElement.style.color = 'white';
 	//innerElement.style.backgroundColor = 'blue';
 	innerElement.style.backgroundColor = color;
 	innerElement.style.border = '2px solid black';
@@ -205,7 +218,7 @@ function addDOMMarker(map, color, lngARG, latARG, idARG, modelARG, connect_idARG
 	outerElement.appendChild(innerElement);
 
 	// Add text to the DOM element
-	//innerElement.innerHTML = 'M';
+	innerElement.innerHTML = textMarker;
 
 	function changeOpacity(evt) {
 		evt.target.style.opacity = 0.6;
