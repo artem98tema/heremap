@@ -36,13 +36,13 @@ lng('http://aumsuhere.tmweb.ru/api/db/view_routers')
     .then((data)=>{
         console.log(data)
     });
-	
+
 lng('http://aumsuhere.tmweb.ru/api/db/view_home_routers')
     .then((data)=>{
         console.log(data)
     });
-	
-	
+
+
 //------------------------------------------------------------------------------------------
 
  // Initialize the platform object:
@@ -62,7 +62,7 @@ lng('http://aumsuhere.tmweb.ru/api/db/view_home_routers')
             center: { lng:37.7575 , lat: 44.7236 }
         });
 
-	
+
 function addMarkersToMap(map) {
 
 
@@ -74,8 +74,8 @@ function addMarkersToMap(map) {
 	  var color = 'blue';
 	  var textMarker = 'M';
 	  var lineColor = '#829';
-		
-		
+
+
 		var xhr = new XMLHttpRequest();
 		// 2. Конфигурируем его: GET-запрос на URL
 		xhr.open('GET', all, false);
@@ -85,11 +85,11 @@ function addMarkersToMap(map) {
 		if (xhr.status != 200) {
 		  // обработать ошибку
 		  alert( xhr.status + ': ' + xhr.statusText ); // пример вывода: 404: Not Found
-		} 
+		}
 		//-----------------------------------------СТАРЫЙ КОД----------------------------------------------
 		/*B
 		else {
-		 
+
 		  var jsonData = JSON.parse(xhr.responseText); // responseText -- текст ответа.
 			for (var i = 0; i < jsonData.length; i++) {
 				var counter = jsonData[i];
@@ -100,7 +100,7 @@ function addMarkersToMap(map) {
 				{
 					lineString[i] = new H.geo.LineString();
 					lineString[i].pushPoint({lng:counter.lng, lat:counter.lat});
-					
+
 					for (var j = 0; j<jsonData.length; j++)
 					{
 						var connecter = jsonData[j];
@@ -119,16 +119,16 @@ function addMarkersToMap(map) {
 							map.addObject(new H.map.Polyline(lineString[i], { style: { lineWidth: lineHierarchy }}));
 						}
 					}
-					
-					
+
+
 				}
 			}
-						
+
 		}
 		*/
 		//----------------------------------------НОВЫЙ КОД--------------------------------
 		else {
-		 
+
 		  var jsonData = JSON.parse(xhr.responseText); // responseText -- текст ответа.
 			for (var i = 0; i < jsonData.length; i++) {
 				var counter = jsonData[i];
@@ -166,7 +166,7 @@ function addMarkersToMap(map) {
 					{
 						lineString[i] = new H.geo.LineString();
 						lineString[i].pushPoint({lng:counter.lng, lat:counter.lat});
-						
+
 						for (var j = 0; j<jsonData.length; j++)
 						{
 							var connecter = jsonData[j];
@@ -174,7 +174,7 @@ function addMarkersToMap(map) {
 							if(connecter.id == counter.connect_id)
 							{
 								//console.log("Found connection between " + connecter.id + " and " + counter.connect_id);
-								
+
 								lineString[i].pushPoint({lng:connecter.lng, lat:connecter.lat});
 								switch(counter.Type)
 								{
@@ -183,8 +183,8 @@ function addMarkersToMap(map) {
 									case 'home_router': lineHierarchy = 2; break;
 									default: break;
 								}
-								
-								
+
+
 								if (connecter.on_off == 0)
 									lineColor = '#d90b42';
 								else
@@ -200,15 +200,15 @@ function addMarkersToMap(map) {
 									else
 										lineColor = '#0bb3d9';
 								}
-								
-								
+
+
 								map.addObject(new H.map.Polyline(lineString[i], { style: { strokeColor: lineColor, lineWidth: lineHierarchy }}));
 							}
-						}		
+						}
 					}
 				}
-			}			
-		}	
+			}
+		}
     }
 	// #d90b42 - red
 	// #0bb3d9 - blue
@@ -231,7 +231,7 @@ function checkRoute(jsonData, connectId, count)
 		}
 	}
 	return false;
-}	
+}
 
 function addDOMMarker(map, color, lngARG, latARG, idARG, modelARG, connect_idARG, on_offARG, ftypeARG, inf_countARG, smotrARG, textMarker)
 {
@@ -239,7 +239,7 @@ function addDOMMarker(map, color, lngARG, latARG, idARG, modelARG, connect_idARG
 	innerElement = document.createElement('div');
 
 	outerElement.title = ftypeARG + " " + modelARG + " id=" + idARG;
-	
+
 	outerElement.style.userSelect = 'none';
 	outerElement.style.webkitUserSelect = 'none';
 	outerElement.style.msUserSelect = 'none';
@@ -300,9 +300,9 @@ function addDOMMarker(map, color, lngARG, latARG, idARG, modelARG, connect_idARG
 	});
 	map.addObject(bearsMarker);
 }
-	
+
 function testFunc(argument)
-{	
+{
 	alert("HELLO WROT!" + argument);
 	return;
 }
@@ -310,6 +310,7 @@ function testFunc(argument)
 function getObjectInfo(id, lat, lng, model, connect_id, on_off, ftype, inf_count, smotr)
 {
 	document.getElementById('form2').style.display = "block";
+	document.getElementById('panel').style.display = "block";
 	$('#id2').val(id);
 	$('#lat2').val(lat);
 	$('#lng2').val(lng);
@@ -323,15 +324,15 @@ function getObjectInfo(id, lat, lng, model, connect_id, on_off, ftype, inf_count
 
 function addNewObjectOnMap()
 {
-	
-	if(($('#ftype').val() == '') || ($('#connect_id').val() == '') || ($('#inf_count').val() == '') || ($('#lat').val() == '') 
+
+	if(($('#ftype').val() == '') || ($('#connect_id').val() == '') || ($('#inf_count').val() == '') || ($('#lat').val() == '')
 		|| ($('#lng').val() == '') || ($('#model').val() == '') || ($('#on_off').val() == '') || ($('#smotr').val() == '')
 	|| ($('#on_off').val() == 'Выберите') || ($('#ftype').val() == 'Выберите') || ($('#cabelType').val() == '') || ($('#connectType').val() == ''))
 	{
 		alert("НЕ ВСЕ ПОЛЯ ЗАПОЛНЕНЫ!!!");
 		return;
 	}
-	
+
 	var json = JSON.stringify({
 	  lat: $('#lat').val(),
 	  lng: $('#lng').val(),
@@ -344,33 +345,33 @@ function addNewObjectOnMap()
 	  type_of_cabel: $('#cabelType').val(),
 	  type_of_connection: $('#connectType').val(),
 	});
-	
+
 	var xhr = new XMLHttpRequest();
 	xhr.open("POST", 'http://aumsuhere.tmweb.ru/api/db/add_router', true);
     xhr.setRequestHeader('Content-type', 'application/json');
- 
+
     xhr.send(json);
-	
+
 	console.log(xhr.responseText);
 	xhr.onreadystatechange = function() {//Вызывает функцию при смене состояния.
 	if(xhr.readyState == XMLHttpRequest.DONE && xhr.status == 200) {
         // Запрос завершен. Здесь можно обрабатывать результат.
 		location.reload();
     }}
-	
+
 	//alert(json);
 }
 
 function updateObjectOnMap()
 {
-	if(($('#ftype2').val() == '') || ($('#connect_id2').val() == '') || ($('#inf_count2').val() == '') || ($('#lat2').val() == '') 
-		|| ($('#lng2').val() == '') || ($('#model2').val() == '') || ($('#on_off2').val() == '') || ($('#id2').val() == '') || ($('#smotr2').val() == '') 
+	if(($('#ftype2').val() == '') || ($('#connect_id2').val() == '') || ($('#inf_count2').val() == '') || ($('#lat2').val() == '')
+		|| ($('#lng2').val() == '') || ($('#model2').val() == '') || ($('#on_off2').val() == '') || ($('#id2').val() == '') || ($('#smotr2').val() == '')
 	|| ($('#on_off2').val() == 'Выберите') || ($('#ftype2').val() == 'Выберите') || ($('#cabelType2').val() == '') || ($('#connectType2').val() == '') )
 	{
 		alert("НЕ ВСЕ ПОЛЯ ЗАПОЛНЕНЫ!!!");
 		return;
 	}
-	
+
 	var json = JSON.stringify({
 	  lat: $('#lat2').val(),
 	  lng: $('#lng2').val(),
@@ -384,22 +385,22 @@ function updateObjectOnMap()
 	  type_of_cabel: $('#cabelType2').val(),
 	  type_of_connection: $('#connectType2').val(),
 	});
-	
+
 	var xhr = new XMLHttpRequest();
 	xhr.open("POST", 'http://aumsuhere.tmweb.ru/api/db/update_router', true);
     xhr.setRequestHeader('Content-type', 'application/json');
- 
+
     xhr.send(json);
-	
+
 	console.log(xhr.responseText);
-	
+
 	xhr.onreadystatechange = function() {//Вызывает функцию при смене состояния.
     if(xhr.readyState == XMLHttpRequest.DONE && xhr.status == 200) {
         // Запрос завершен. Здесь можно обрабатывать результат.
 		location.reload();
     }
 }
-	
+
 }
 
 function deleteObjectOnMap()
@@ -414,11 +415,11 @@ function deleteObjectOnMap()
 	xhr.open('GET', 'http://aumsuhere.tmweb.ru/api/db/delete_by_id/' + $('#id2').val(), false);
 		// 3. Отсылаем запрос
 	xhr.send();
-	
+
 	if (xhr.status == 200) {
 		  location.reload();
 	}
-	
+
 	}
 }
 
@@ -429,7 +430,7 @@ function showHomeRoutersTable(commutatorId)
 	xhr.send();
 	if (xhr.status != 200) {
 		alert( xhr.status + ': ' + xhr.statusText ); // пример вывода: 404: Not Found
-	} 	
+	}
 	else {
 		var resultText = '';
 		var jsonData = JSON.parse(xhr.responseText);
@@ -443,7 +444,7 @@ function showHomeRoutersTable(commutatorId)
 
 
 //http://aumsuhere.tmweb.ru/api/db/delete_by_id/84
-	
+
     var behavior = new H.mapevents.Behavior(new H.mapevents.MapEvents(map));
 
     window.onload = function () {
