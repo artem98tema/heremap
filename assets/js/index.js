@@ -161,7 +161,7 @@ function addMarkersToMap(map) {
 				}
 				if (!(counter.Type == 'home_router'))
 				{
-					addDOMMarker(map, color, counter.lng, counter.lat, counter.id, counter.model, counter.connect_id, counter.on_off, counter.Type, counter.inf_count, counter.smotr, textMarker);
+					addDOMMarker(map, color, counter.lng, counter.lat, counter.id, counter.model, counter.connect_id, counter.on_off, counter.Type, counter.inf_count, counter.smotr, textMarker, counter.type_of_cabel, counter.type_of_connection);
 					if (!(counter.connect_id == 0))
 					{
 						lineString[i] = new H.geo.LineString();
@@ -233,7 +233,7 @@ function checkRoute(jsonData, connectId, count)
 	return false;
 }
 
-function addDOMMarker(map, color, lngARG, latARG, idARG, modelARG, connect_idARG, on_offARG, ftypeARG, inf_countARG, smotrARG, textMarker)
+function addDOMMarker(map, color, lngARG, latARG, idARG, modelARG, connect_idARG, on_offARG, ftypeARG, inf_countARG, smotrARG, textMarker, cabelTypeARG, connectTypeARG)
 {
 	var outerElement = document.createElement('div'),
 	innerElement = document.createElement('div');
@@ -285,7 +285,7 @@ function addDOMMarker(map, color, lngARG, latARG, idARG, modelARG, connect_idARG
 			//clonedElement.addEventListener('mousedown', testFunc);
 			//clonedElement.addEventListener('mousedown', function(){testFunc("TESTARG");});
 			//clonedElement.addEventListener('mousedown', function(){testFunc("lng=" + lngARG + " lat=" + latARG);});
-			clonedElement.addEventListener('mousedown', function(){getObjectInfo(idARG, latARG, lngARG, modelARG, connect_idARG, on_offARG, ftypeARG, inf_countARG, smotrARG);});
+			clonedElement.addEventListener('mousedown', function(){getObjectInfo(idARG, latARG, lngARG, modelARG, connect_idARG, on_offARG, ftypeARG, inf_countARG, smotrARG, cabelTypeARG, connectTypeARG);});
 		},
 	// the function is called every time marker leaves the viewport
 		onDetach: function(clonedElement, domIcon, domMarker) {
@@ -307,7 +307,7 @@ function testFunc(argument)
 	return;
 }
 
-function getObjectInfo(id, lat, lng, model, connect_id, on_off, ftype, inf_count, smotr)
+function getObjectInfo(id, lat, lng, model, connect_id, on_off, ftype, inf_count, smotr, cabelType, connectType)
 {
 	document.getElementById('form2').style.display = "block";
 	showHomeRoutersTable(id);
@@ -320,6 +320,8 @@ function getObjectInfo(id, lat, lng, model, connect_id, on_off, ftype, inf_count
 	$('#ftype2').val(ftype);
 	$('#inf_count2').val(inf_count);
 	$('#smotr2').val(smotr);
+	$('#cabelType2').val(cabelType);
+	$('#connectType2').val(connectType);
 }
 
 function addNewObjectOnMap()
