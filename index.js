@@ -127,12 +127,21 @@ function addMarkersToMap(map) {
 			for (var i = 0; i < jsonData.length; i++) {
 				var counter = jsonData[i];
 				//console.log(counter.Type);
+				/* //Блок кода, делающий цветовую индикацию в зависимости от Типа роутера
 				switch(counter.Type)
 				{
 					case 'provider_server': color = 'red'; break;
 					case 'raion_commutator': color = 'blue'; break;
 					case 'house_commutator': color = 'green'; break;
 					case 'home_router': color = 'yellow'; break;
+					default: break;
+				}
+				*/
+				// Блок кода, делающий цветовую индикацию в зависимости от состояния роутера
+				switch(counter.on_off)
+				{
+					case 0: color = 'red'; break;
+					case 1: color = 'green'; break;
 					default: break;
 				}
 				addDOMMarker(map, color, counter.lng, counter.lat, counter.id, counter.model, counter.connect_id, counter.on_off, counter.Type, counter.inf_count, counter.smotr);
