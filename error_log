@@ -1,0 +1,135 @@
+
+aumsuhere.tmweb.ru [Fri May 08 21:49:23 2020] [error] [pid 27356] mod_wsgi.c(6443): [client 46.173.4.140:53864] mod_wsgi (pid=27356): Target WSGI script '/home/c/cp36696/here_hack_2020/public_html/index.wsgi' cannot be loaded as Python module.
+aumsuhere.tmweb.ru [Fri May 08 21:49:23 2020] [error] [pid 27356] mod_wsgi.c(2037): [client 46.173.4.140:53864] mod_wsgi (pid=27356): Exception occurred processing WSGI script '/home/c/cp36696/here_hack_2020/public_html/index.wsgi'.
+aumsuhere.tmweb.ru [Fri May 08 21:49:23 2020] [error] [pid 27356] mod_wsgi.c(1599): [client 46.173.4.140:53864] Traceback (most recent call last):
+aumsuhere.tmweb.ru [Fri May 08 21:49:23 2020] [error] [pid 27356] mod_wsgi.c(1599): [client 46.173.4.140:53864]   File "/home/c/cp36696/here_hack_2020/public_html/index.wsgi", line 9, in <module>
+aumsuhere.tmweb.ru [Fri May 08 21:49:23 2020] [error] [pid 27356] mod_wsgi.c(1599): [client 46.173.4.140:53864]     from seti import seti as application
+aumsuhere.tmweb.ru [Fri May 08 21:49:23 2020] [error] [pid 27356] mod_wsgi.c(1599): [client 46.173.4.140:53864]   File "/home/c/cp36696/here_hack_2020/public_html/seti/__init__.py", line 14, in <module>
+aumsuhere.tmweb.ru [Fri May 08 21:49:23 2020] [error] [pid 27356] mod_wsgi.c(1599): [client 46.173.4.140:53864]     from seti import routes, models
+aumsuhere.tmweb.ru [Fri May 08 21:49:23 2020] [error] [pid 27356] mod_wsgi.c(1599): [client 46.173.4.140:53864]   File "/home/c/cp36696/here_hack_2020/public_html/seti/routes.py", line 65
+aumsuhere.tmweb.ru [Fri May 08 21:49:23 2020] [error] [pid 27356] mod_wsgi.c(1599): [client 46.173.4.140:53864]     all_home_routers  = , eval(str(home_routers.query.all()))
+aumsuhere.tmweb.ru [Fri May 08 21:49:23 2020] [error] [pid 27356] mod_wsgi.c(1599): [client 46.173.4.140:53864]                         ^
+aumsuhere.tmweb.ru [Fri May 08 21:49:23 2020] [error] [pid 27356] mod_wsgi.c(1599): [client 46.173.4.140:53864] SyntaxError: invalid syntax
+aumsuhere.tmweb.ru [Fri May 08 21:49:53 2020] [error] [pid 28467] mod_wsgi.c(6443): [client 46.159.17.130:55826] mod_wsgi (pid=28467): Target WSGI script '/home/c/cp36696/here_hack_2020/public_html/index.wsgi' cannot be loaded as Python module.
+aumsuhere.tmweb.ru [Fri May 08 21:49:53 2020] [error] [pid 28467] mod_wsgi.c(2037): [client 46.159.17.130:55826] mod_wsgi (pid=28467): Exception occurred processing WSGI script '/home/c/cp36696/here_hack_2020/public_html/index.wsgi'.
+aumsuhere.tmweb.ru [Fri May 08 21:49:53 2020] [error] [pid 28467] mod_wsgi.c(1599): [client 46.159.17.130:55826] Traceback (most recent call last):
+aumsuhere.tmweb.ru [Fri May 08 21:49:53 2020] [error] [pid 28467] mod_wsgi.c(1599): [client 46.159.17.130:55826]   File "/home/c/cp36696/here_hack_2020/public_html/index.wsgi", line 9, in <module>
+aumsuhere.tmweb.ru [Fri May 08 21:49:53 2020] [error] [pid 28467] mod_wsgi.c(1599): [client 46.159.17.130:55826]     from seti import seti as application
+aumsuhere.tmweb.ru [Fri May 08 21:49:53 2020] [error] [pid 28467] mod_wsgi.c(1599): [client 46.159.17.130:55826]   File "/home/c/cp36696/here_hack_2020/public_html/seti/__init__.py", line 14, in <module>
+aumsuhere.tmweb.ru [Fri May 08 21:49:53 2020] [error] [pid 28467] mod_wsgi.c(1599): [client 46.159.17.130:55826]     from seti import routes, models
+aumsuhere.tmweb.ru [Fri May 08 21:49:53 2020] [error] [pid 28467] mod_wsgi.c(1599): [client 46.159.17.130:55826]   File "/home/c/cp36696/here_hack_2020/public_html/seti/routes.py", line 65
+aumsuhere.tmweb.ru [Fri May 08 21:49:53 2020] [error] [pid 28467] mod_wsgi.c(1599): [client 46.159.17.130:55826]     all_home_routers  = , eval(str(home_routers.query.all()))
+aumsuhere.tmweb.ru [Fri May 08 21:49:53 2020] [error] [pid 28467] mod_wsgi.c(1599): [client 46.159.17.130:55826]                         ^
+aumsuhere.tmweb.ru [Fri May 08 21:49:53 2020] [error] [pid 28467] mod_wsgi.c(1599): [client 46.159.17.130:55826] SyntaxError: invalid syntax
+aumsuhere.tmweb.ru [Fri May 08 21:50:03 2020] [error] [pid 29019] mod_wsgi.c(1599): [client 2a03:6f00:1::5c35:606f:56382] [2020-05-08 21:50:03,282] ERROR in app: Exception on /send_inf [GET]
+aumsuhere.tmweb.ru [Fri May 08 21:50:03 2020] [error] [pid 29019] mod_wsgi.c(1599): [client 2a03:6f00:1::5c35:606f:56382] Traceback (most recent call last):
+aumsuhere.tmweb.ru [Fri May 08 21:50:03 2020] [error] [pid 29019] mod_wsgi.c(1599): [client 2a03:6f00:1::5c35:606f:56382]   File "/home/c/cp36696/myenv/lib/python3.4/site-packages/flask/app.py", line 2317, in wsgi_app
+aumsuhere.tmweb.ru [Fri May 08 21:50:03 2020] [error] [pid 29019] mod_wsgi.c(1599): [client 2a03:6f00:1::5c35:606f:56382]     response = self.full_dispatch_request()
+aumsuhere.tmweb.ru [Fri May 08 21:50:03 2020] [error] [pid 29019] mod_wsgi.c(1599): [client 2a03:6f00:1::5c35:606f:56382]   File "/home/c/cp36696/myenv/lib/python3.4/site-packages/flask/app.py", line 1840, in full_dispatch_request
+aumsuhere.tmweb.ru [Fri May 08 21:50:03 2020] [error] [pid 29019] mod_wsgi.c(1599): [client 2a03:6f00:1::5c35:606f:56382]     rv = self.handle_user_exception(e)
+aumsuhere.tmweb.ru [Fri May 08 21:50:03 2020] [error] [pid 29019] mod_wsgi.c(1599): [client 2a03:6f00:1::5c35:606f:56382]   File "/home/c/cp36696/myenv/lib/python3.4/site-packages/flask_cors/extension.py", line 161, in wrapped_function
+aumsuhere.tmweb.ru [Fri May 08 21:50:03 2020] [error] [pid 29019] mod_wsgi.c(1599): [client 2a03:6f00:1::5c35:606f:56382]     return cors_after_request(app.make_response(f(*args, **kwargs)))
+aumsuhere.tmweb.ru [Fri May 08 21:50:03 2020] [error] [pid 29019] mod_wsgi.c(1599): [client 2a03:6f00:1::5c35:606f:56382]   File "/home/c/cp36696/myenv/lib/python3.4/site-packages/flask/app.py", line 1743, in handle_user_exception
+aumsuhere.tmweb.ru [Fri May 08 21:50:03 2020] [error] [pid 29019] mod_wsgi.c(1599): [client 2a03:6f00:1::5c35:606f:56382]     reraise(exc_type, exc_value, tb)
+aumsuhere.tmweb.ru [Fri May 08 21:50:03 2020] [error] [pid 29019] mod_wsgi.c(1599): [client 2a03:6f00:1::5c35:606f:56382]   File "/home/c/cp36696/myenv/lib/python3.4/site-packages/flask/_compat.py", line 36, in reraise
+aumsuhere.tmweb.ru [Fri May 08 21:50:03 2020] [error] [pid 29019] mod_wsgi.c(1599): [client 2a03:6f00:1::5c35:606f:56382]     raise value
+aumsuhere.tmweb.ru [Fri May 08 21:50:03 2020] [error] [pid 29019] mod_wsgi.c(1599): [client 2a03:6f00:1::5c35:606f:56382]   File "/home/c/cp36696/myenv/lib/python3.4/site-packages/flask/app.py", line 1838, in full_dispatch_request
+aumsuhere.tmweb.ru [Fri May 08 21:50:03 2020] [error] [pid 29019] mod_wsgi.c(1599): [client 2a03:6f00:1::5c35:606f:56382]     rv = self.dispatch_request()
+aumsuhere.tmweb.ru [Fri May 08 21:50:03 2020] [error] [pid 29019] mod_wsgi.c(1599): [client 2a03:6f00:1::5c35:606f:56382]   File "/home/c/cp36696/myenv/lib/python3.4/site-packages/flask/app.py", line 1824, in dispatch_request
+aumsuhere.tmweb.ru [Fri May 08 21:50:03 2020] [error] [pid 29019] mod_wsgi.c(1599): [client 2a03:6f00:1::5c35:606f:56382]     return self.view_functions[rule.endpoint](**req.view_args)
+aumsuhere.tmweb.ru [Fri May 08 21:50:03 2020] [error] [pid 29019] mod_wsgi.c(1599): [client 2a03:6f00:1::5c35:606f:56382]   File "/home/c/cp36696/here_hack_2020/public_html/seti/routes.py", line 67, in send_ind_rout
+aumsuhere.tmweb.ru [Fri May 08 21:50:03 2020] [error] [pid 29019] mod_wsgi.c(1599): [client 2a03:6f00:1::5c35:606f:56382]     send_inf_rout(router['id'])
+aumsuhere.tmweb.ru [Fri May 08 21:50:03 2020] [error] [pid 29019] mod_wsgi.c(1599): [client 2a03:6f00:1::5c35:606f:56382]   File "/home/c/cp36696/here_hack_2020/public_html/seti/routes.py", line 59, in send_inf_rout
+aumsuhere.tmweb.ru [Fri May 08 21:50:03 2020] [error] [pid 29019] mod_wsgi.c(1599): [client 2a03:6f00:1::5c35:606f:56382]     id = routers.query.get(id).connect_id
+aumsuhere.tmweb.ru [Fri May 08 21:50:03 2020] [error] [pid 29019] mod_wsgi.c(1599): [client 2a03:6f00:1::5c35:606f:56382] AttributeError: 'NoneType' object has no attribute 'connect_id'
+aumsuhere.tmweb.ru [Fri May 08 21:50:03 2020] [error] [pid 29019] mod_wsgi.c(1599): [client 2a03:6f00:1::5c35:606f:56382] 
+aumsuhere.tmweb.ru [Fri May 08 21:50:03 2020] [error] [pid 30403] mod_wsgi.c(1599): [client 46.173.4.140:56500] [2020-05-08 21:50:03,761] ERROR in app: Exception on /send_inf [GET]
+aumsuhere.tmweb.ru [Fri May 08 21:50:03 2020] [error] [pid 30403] mod_wsgi.c(1599): [client 46.173.4.140:56500] Traceback (most recent call last):
+aumsuhere.tmweb.ru [Fri May 08 21:50:03 2020] [error] [pid 30403] mod_wsgi.c(1599): [client 46.173.4.140:56500]   File "/home/c/cp36696/myenv/lib/python3.4/site-packages/flask/app.py", line 2317, in wsgi_app
+aumsuhere.tmweb.ru [Fri May 08 21:50:03 2020] [error] [pid 30403] mod_wsgi.c(1599): [client 46.173.4.140:56500]     response = self.full_dispatch_request()
+aumsuhere.tmweb.ru [Fri May 08 21:50:03 2020] [error] [pid 30403] mod_wsgi.c(1599): [client 46.173.4.140:56500]   File "/home/c/cp36696/myenv/lib/python3.4/site-packages/flask/app.py", line 1840, in full_dispatch_request
+aumsuhere.tmweb.ru [Fri May 08 21:50:03 2020] [error] [pid 30403] mod_wsgi.c(1599): [client 46.173.4.140:56500]     rv = self.handle_user_exception(e)
+aumsuhere.tmweb.ru [Fri May 08 21:50:03 2020] [error] [pid 30403] mod_wsgi.c(1599): [client 46.173.4.140:56500]   File "/home/c/cp36696/myenv/lib/python3.4/site-packages/flask_cors/extension.py", line 161, in wrapped_function
+aumsuhere.tmweb.ru [Fri May 08 21:50:03 2020] [error] [pid 30403] mod_wsgi.c(1599): [client 46.173.4.140:56500]     return cors_after_request(app.make_response(f(*args, **kwargs)))
+aumsuhere.tmweb.ru [Fri May 08 21:50:03 2020] [error] [pid 30403] mod_wsgi.c(1599): [client 46.173.4.140:56500]   File "/home/c/cp36696/myenv/lib/python3.4/site-packages/flask/app.py", line 1743, in handle_user_exception
+aumsuhere.tmweb.ru [Fri May 08 21:50:03 2020] [error] [pid 30403] mod_wsgi.c(1599): [client 46.173.4.140:56500]     reraise(exc_type, exc_value, tb)
+aumsuhere.tmweb.ru [Fri May 08 21:50:03 2020] [error] [pid 30403] mod_wsgi.c(1599): [client 46.173.4.140:56500]   File "/home/c/cp36696/myenv/lib/python3.4/site-packages/flask/_compat.py", line 36, in reraise
+aumsuhere.tmweb.ru [Fri May 08 21:50:03 2020] [error] [pid 30403] mod_wsgi.c(1599): [client 46.173.4.140:56500]     raise value
+aumsuhere.tmweb.ru [Fri May 08 21:50:03 2020] [error] [pid 30403] mod_wsgi.c(1599): [client 46.173.4.140:56500]   File "/home/c/cp36696/myenv/lib/python3.4/site-packages/flask/app.py", line 1838, in full_dispatch_request
+aumsuhere.tmweb.ru [Fri May 08 21:50:03 2020] [error] [pid 30403] mod_wsgi.c(1599): [client 46.173.4.140:56500]     rv = self.dispatch_request()
+aumsuhere.tmweb.ru [Fri May 08 21:50:03 2020] [error] [pid 30403] mod_wsgi.c(1599): [client 46.173.4.140:56500]   File "/home/c/cp36696/myenv/lib/python3.4/site-packages/flask/app.py", line 1824, in dispatch_request
+aumsuhere.tmweb.ru [Fri May 08 21:50:03 2020] [error] [pid 30403] mod_wsgi.c(1599): [client 46.173.4.140:56500]     return self.view_functions[rule.endpoint](**req.view_args)
+aumsuhere.tmweb.ru [Fri May 08 21:50:03 2020] [error] [pid 30403] mod_wsgi.c(1599): [client 46.173.4.140:56500]   File "/home/c/cp36696/here_hack_2020/public_html/seti/routes.py", line 67, in send_ind_rout
+aumsuhere.tmweb.ru [Fri May 08 21:50:03 2020] [error] [pid 30403] mod_wsgi.c(1599): [client 46.173.4.140:56500]     send_inf_rout(router['id'])
+aumsuhere.tmweb.ru [Fri May 08 21:50:03 2020] [error] [pid 30403] mod_wsgi.c(1599): [client 46.173.4.140:56500]   File "/home/c/cp36696/here_hack_2020/public_html/seti/routes.py", line 59, in send_inf_rout
+aumsuhere.tmweb.ru [Fri May 08 21:50:03 2020] [error] [pid 30403] mod_wsgi.c(1599): [client 46.173.4.140:56500]     id = routers.query.get(id).connect_id
+aumsuhere.tmweb.ru [Fri May 08 21:50:03 2020] [error] [pid 30403] mod_wsgi.c(1599): [client 46.173.4.140:56500] AttributeError: 'NoneType' object has no attribute 'connect_id'
+aumsuhere.tmweb.ru [Fri May 08 21:50:03 2020] [error] [pid 30403] mod_wsgi.c(1599): [client 46.173.4.140:56500] 
+aumsuhere.tmweb.ru [Fri May 08 22:05:48 2020] [error] [pid 14239] mod_wsgi.c(1599): [client 46.173.4.140:46598] [2020-05-08 22:05:48,181] ERROR in app: Exception on /send_inf [GET]
+aumsuhere.tmweb.ru [Fri May 08 22:05:48 2020] [error] [pid 14239] mod_wsgi.c(1599): [client 46.173.4.140:46598] Traceback (most recent call last):
+aumsuhere.tmweb.ru [Fri May 08 22:05:48 2020] [error] [pid 14239] mod_wsgi.c(1599): [client 46.173.4.140:46598]   File "/home/c/cp36696/myenv/lib/python3.4/site-packages/flask/app.py", line 2317, in wsgi_app
+aumsuhere.tmweb.ru [Fri May 08 22:05:48 2020] [error] [pid 14239] mod_wsgi.c(1599): [client 46.173.4.140:46598]     response = self.full_dispatch_request()
+aumsuhere.tmweb.ru [Fri May 08 22:05:48 2020] [error] [pid 14239] mod_wsgi.c(1599): [client 46.173.4.140:46598]   File "/home/c/cp36696/myenv/lib/python3.4/site-packages/flask/app.py", line 1840, in full_dispatch_request
+aumsuhere.tmweb.ru [Fri May 08 22:05:48 2020] [error] [pid 14239] mod_wsgi.c(1599): [client 46.173.4.140:46598]     rv = self.handle_user_exception(e)
+aumsuhere.tmweb.ru [Fri May 08 22:05:48 2020] [error] [pid 14239] mod_wsgi.c(1599): [client 46.173.4.140:46598]   File "/home/c/cp36696/myenv/lib/python3.4/site-packages/flask_cors/extension.py", line 161, in wrapped_function
+aumsuhere.tmweb.ru [Fri May 08 22:05:48 2020] [error] [pid 14239] mod_wsgi.c(1599): [client 46.173.4.140:46598]     return cors_after_request(app.make_response(f(*args, **kwargs)))
+aumsuhere.tmweb.ru [Fri May 08 22:05:48 2020] [error] [pid 14239] mod_wsgi.c(1599): [client 46.173.4.140:46598]   File "/home/c/cp36696/myenv/lib/python3.4/site-packages/flask/app.py", line 1743, in handle_user_exception
+aumsuhere.tmweb.ru [Fri May 08 22:05:48 2020] [error] [pid 14239] mod_wsgi.c(1599): [client 46.173.4.140:46598]     reraise(exc_type, exc_value, tb)
+aumsuhere.tmweb.ru [Fri May 08 22:05:48 2020] [error] [pid 14239] mod_wsgi.c(1599): [client 46.173.4.140:46598]   File "/home/c/cp36696/myenv/lib/python3.4/site-packages/flask/_compat.py", line 36, in reraise
+aumsuhere.tmweb.ru [Fri May 08 22:05:48 2020] [error] [pid 14239] mod_wsgi.c(1599): [client 46.173.4.140:46598]     raise value
+aumsuhere.tmweb.ru [Fri May 08 22:05:48 2020] [error] [pid 14239] mod_wsgi.c(1599): [client 46.173.4.140:46598]   File "/home/c/cp36696/myenv/lib/python3.4/site-packages/flask/app.py", line 1838, in full_dispatch_request
+aumsuhere.tmweb.ru [Fri May 08 22:05:48 2020] [error] [pid 14239] mod_wsgi.c(1599): [client 46.173.4.140:46598]     rv = self.dispatch_request()
+aumsuhere.tmweb.ru [Fri May 08 22:05:48 2020] [error] [pid 14239] mod_wsgi.c(1599): [client 46.173.4.140:46598]   File "/home/c/cp36696/myenv/lib/python3.4/site-packages/flask/app.py", line 1824, in dispatch_request
+aumsuhere.tmweb.ru [Fri May 08 22:05:48 2020] [error] [pid 14239] mod_wsgi.c(1599): [client 46.173.4.140:46598]     return self.view_functions[rule.endpoint](**req.view_args)
+aumsuhere.tmweb.ru [Fri May 08 22:05:48 2020] [error] [pid 14239] mod_wsgi.c(1599): [client 46.173.4.140:46598]   File "/home/c/cp36696/here_hack_2020/public_html/seti/routes.py", line 74, in send_ind_rout
+aumsuhere.tmweb.ru [Fri May 08 22:05:48 2020] [error] [pid 14239] mod_wsgi.c(1599): [client 46.173.4.140:46598]     send_inf_rout(router['id'])
+aumsuhere.tmweb.ru [Fri May 08 22:05:48 2020] [error] [pid 14239] mod_wsgi.c(1599): [client 46.173.4.140:46598]   File "/home/c/cp36696/here_hack_2020/public_html/seti/routes.py", line 62, in send_inf_rout
+aumsuhere.tmweb.ru [Fri May 08 22:05:48 2020] [error] [pid 14239] mod_wsgi.c(1599): [client 46.173.4.140:46598]     information_send(id, gigabytes)
+aumsuhere.tmweb.ru [Fri May 08 22:05:48 2020] [error] [pid 14239] mod_wsgi.c(1599): [client 46.173.4.140:46598]   File "/home/c/cp36696/here_hack_2020/public_html/seti/routes.py", line 53, in information_send
+aumsuhere.tmweb.ru [Fri May 08 22:05:48 2020] [error] [pid 14239] mod_wsgi.c(1599): [client 46.173.4.140:46598]     if rout_obj.on_off != None:
+aumsuhere.tmweb.ru [Fri May 08 22:05:48 2020] [error] [pid 14239] mod_wsgi.c(1599): [client 46.173.4.140:46598] AttributeError: 'NoneType' object has no attribute 'on_off'
+aumsuhere.tmweb.ru [Fri May 08 22:05:48 2020] [error] [pid 14239] mod_wsgi.c(1599): [client 46.173.4.140:46598] 
+aumsuhere.tmweb.ru [Fri May 08 22:06:02 2020] [error] [pid 15066] mod_wsgi.c(1599): [client 2a03:6f00:1::5c35:606f:47326] [2020-05-08 22:06:02,601] ERROR in app: Exception on /send_inf [GET]
+aumsuhere.tmweb.ru [Fri May 08 22:06:02 2020] [error] [pid 15066] mod_wsgi.c(1599): [client 2a03:6f00:1::5c35:606f:47326] Traceback (most recent call last):
+aumsuhere.tmweb.ru [Fri May 08 22:06:02 2020] [error] [pid 15066] mod_wsgi.c(1599): [client 2a03:6f00:1::5c35:606f:47326]   File "/home/c/cp36696/myenv/lib/python3.4/site-packages/flask/app.py", line 2317, in wsgi_app
+aumsuhere.tmweb.ru [Fri May 08 22:06:02 2020] [error] [pid 15066] mod_wsgi.c(1599): [client 2a03:6f00:1::5c35:606f:47326]     response = self.full_dispatch_request()
+aumsuhere.tmweb.ru [Fri May 08 22:06:02 2020] [error] [pid 15066] mod_wsgi.c(1599): [client 2a03:6f00:1::5c35:606f:47326]   File "/home/c/cp36696/myenv/lib/python3.4/site-packages/flask/app.py", line 1840, in full_dispatch_request
+aumsuhere.tmweb.ru [Fri May 08 22:06:02 2020] [error] [pid 15066] mod_wsgi.c(1599): [client 2a03:6f00:1::5c35:606f:47326]     rv = self.handle_user_exception(e)
+aumsuhere.tmweb.ru [Fri May 08 22:06:02 2020] [error] [pid 15066] mod_wsgi.c(1599): [client 2a03:6f00:1::5c35:606f:47326]   File "/home/c/cp36696/myenv/lib/python3.4/site-packages/flask_cors/extension.py", line 161, in wrapped_function
+aumsuhere.tmweb.ru [Fri May 08 22:06:02 2020] [error] [pid 15066] mod_wsgi.c(1599): [client 2a03:6f00:1::5c35:606f:47326]     return cors_after_request(app.make_response(f(*args, **kwargs)))
+aumsuhere.tmweb.ru [Fri May 08 22:06:02 2020] [error] [pid 15066] mod_wsgi.c(1599): [client 2a03:6f00:1::5c35:606f:47326]   File "/home/c/cp36696/myenv/lib/python3.4/site-packages/flask/app.py", line 1743, in handle_user_exception
+aumsuhere.tmweb.ru [Fri May 08 22:06:02 2020] [error] [pid 15066] mod_wsgi.c(1599): [client 2a03:6f00:1::5c35:606f:47326]     reraise(exc_type, exc_value, tb)
+aumsuhere.tmweb.ru [Fri May 08 22:06:02 2020] [error] [pid 15066] mod_wsgi.c(1599): [client 2a03:6f00:1::5c35:606f:47326]   File "/home/c/cp36696/myenv/lib/python3.4/site-packages/flask/_compat.py", line 36, in reraise
+aumsuhere.tmweb.ru [Fri May 08 22:06:02 2020] [error] [pid 15066] mod_wsgi.c(1599): [client 2a03:6f00:1::5c35:606f:47326]     raise value
+aumsuhere.tmweb.ru [Fri May 08 22:06:02 2020] [error] [pid 15066] mod_wsgi.c(1599): [client 2a03:6f00:1::5c35:606f:47326]   File "/home/c/cp36696/myenv/lib/python3.4/site-packages/flask/app.py", line 1838, in full_dispatch_request
+aumsuhere.tmweb.ru [Fri May 08 22:06:02 2020] [error] [pid 15066] mod_wsgi.c(1599): [client 2a03:6f00:1::5c35:606f:47326]     rv = self.dispatch_request()
+aumsuhere.tmweb.ru [Fri May 08 22:06:02 2020] [error] [pid 15066] mod_wsgi.c(1599): [client 2a03:6f00:1::5c35:606f:47326]   File "/home/c/cp36696/myenv/lib/python3.4/site-packages/flask/app.py", line 1824, in dispatch_request
+aumsuhere.tmweb.ru [Fri May 08 22:06:02 2020] [error] [pid 15066] mod_wsgi.c(1599): [client 2a03:6f00:1::5c35:606f:47326]     return self.view_functions[rule.endpoint](**req.view_args)
+aumsuhere.tmweb.ru [Fri May 08 22:06:02 2020] [error] [pid 15066] mod_wsgi.c(1599): [client 2a03:6f00:1::5c35:606f:47326]   File "/home/c/cp36696/here_hack_2020/public_html/seti/routes.py", line 74, in send_ind_rout
+aumsuhere.tmweb.ru [Fri May 08 22:06:02 2020] [error] [pid 15066] mod_wsgi.c(1599): [client 2a03:6f00:1::5c35:606f:47326]     send_inf_rout(router['id'])
+aumsuhere.tmweb.ru [Fri May 08 22:06:02 2020] [error] [pid 15066] mod_wsgi.c(1599): [client 2a03:6f00:1::5c35:606f:47326]   File "/home/c/cp36696/here_hack_2020/public_html/seti/routes.py", line 62, in send_inf_rout
+aumsuhere.tmweb.ru [Fri May 08 22:06:02 2020] [error] [pid 15066] mod_wsgi.c(1599): [client 2a03:6f00:1::5c35:606f:47326]     information_send(id, gigabytes)
+aumsuhere.tmweb.ru [Fri May 08 22:06:02 2020] [error] [pid 15066] mod_wsgi.c(1599): [client 2a03:6f00:1::5c35:606f:47326]   File "/home/c/cp36696/here_hack_2020/public_html/seti/routes.py", line 53, in information_send
+aumsuhere.tmweb.ru [Fri May 08 22:06:02 2020] [error] [pid 15066] mod_wsgi.c(1599): [client 2a03:6f00:1::5c35:606f:47326]     if rout_obj.on_off != None:
+aumsuhere.tmweb.ru [Fri May 08 22:06:02 2020] [error] [pid 15066] mod_wsgi.c(1599): [client 2a03:6f00:1::5c35:606f:47326] AttributeError: 'NoneType' object has no attribute 'on_off'
+aumsuhere.tmweb.ru [Fri May 08 22:06:02 2020] [error] [pid 15066] mod_wsgi.c(1599): [client 2a03:6f00:1::5c35:606f:47326] 
+aumsuhere.tmweb.ru [Fri May 08 22:12:52 2020] [error] [pid 16110] mod_wsgi.c(1599): [client 46.173.4.140:38160] [2020-05-08 22:12:52,437] ERROR in app: Exception on /getzero [GET]
+aumsuhere.tmweb.ru [Fri May 08 22:12:52 2020] [error] [pid 16110] mod_wsgi.c(1599): [client 46.173.4.140:38160] Traceback (most recent call last):
+aumsuhere.tmweb.ru [Fri May 08 22:12:52 2020] [error] [pid 16110] mod_wsgi.c(1599): [client 46.173.4.140:38160]   File "/home/c/cp36696/myenv/lib/python3.4/site-packages/flask/app.py", line 2317, in wsgi_app
+aumsuhere.tmweb.ru [Fri May 08 22:12:52 2020] [error] [pid 16110] mod_wsgi.c(1599): [client 46.173.4.140:38160]     response = self.full_dispatch_request()
+aumsuhere.tmweb.ru [Fri May 08 22:12:52 2020] [error] [pid 16110] mod_wsgi.c(1599): [client 46.173.4.140:38160]   File "/home/c/cp36696/myenv/lib/python3.4/site-packages/flask/app.py", line 1840, in full_dispatch_request
+aumsuhere.tmweb.ru [Fri May 08 22:12:52 2020] [error] [pid 16110] mod_wsgi.c(1599): [client 46.173.4.140:38160]     rv = self.handle_user_exception(e)
+aumsuhere.tmweb.ru [Fri May 08 22:12:52 2020] [error] [pid 16110] mod_wsgi.c(1599): [client 46.173.4.140:38160]   File "/home/c/cp36696/myenv/lib/python3.4/site-packages/flask_cors/extension.py", line 161, in wrapped_function
+aumsuhere.tmweb.ru [Fri May 08 22:12:52 2020] [error] [pid 16110] mod_wsgi.c(1599): [client 46.173.4.140:38160]     return cors_after_request(app.make_response(f(*args, **kwargs)))
+aumsuhere.tmweb.ru [Fri May 08 22:12:52 2020] [error] [pid 16110] mod_wsgi.c(1599): [client 46.173.4.140:38160]   File "/home/c/cp36696/myenv/lib/python3.4/site-packages/flask/app.py", line 1743, in handle_user_exception
+aumsuhere.tmweb.ru [Fri May 08 22:12:52 2020] [error] [pid 16110] mod_wsgi.c(1599): [client 46.173.4.140:38160]     reraise(exc_type, exc_value, tb)
+aumsuhere.tmweb.ru [Fri May 08 22:12:52 2020] [error] [pid 16110] mod_wsgi.c(1599): [client 46.173.4.140:38160]   File "/home/c/cp36696/myenv/lib/python3.4/site-packages/flask/_compat.py", line 36, in reraise
+aumsuhere.tmweb.ru [Fri May 08 22:12:52 2020] [error] [pid 16110] mod_wsgi.c(1599): [client 46.173.4.140:38160]     raise value
+aumsuhere.tmweb.ru [Fri May 08 22:12:52 2020] [error] [pid 16110] mod_wsgi.c(1599): [client 46.173.4.140:38160]   File "/home/c/cp36696/myenv/lib/python3.4/site-packages/flask/app.py", line 1838, in full_dispatch_request
+aumsuhere.tmweb.ru [Fri May 08 22:12:52 2020] [error] [pid 16110] mod_wsgi.c(1599): [client 46.173.4.140:38160]     rv = self.dispatch_request()
+aumsuhere.tmweb.ru [Fri May 08 22:12:52 2020] [error] [pid 16110] mod_wsgi.c(1599): [client 46.173.4.140:38160]   File "/home/c/cp36696/myenv/lib/python3.4/site-packages/flask/app.py", line 1824, in dispatch_request
+aumsuhere.tmweb.ru [Fri May 08 22:12:52 2020] [error] [pid 16110] mod_wsgi.c(1599): [client 46.173.4.140:38160]     return self.view_functions[rule.endpoint](**req.view_args)
+aumsuhere.tmweb.ru [Fri May 08 22:12:52 2020] [error] [pid 16110] mod_wsgi.c(1599): [client 46.173.4.140:38160]   File "/home/c/cp36696/here_hack_2020/public_html/seti/routes.py", line 43, in getzero
+aumsuhere.tmweb.ru [Fri May 08 22:12:52 2020] [error] [pid 16110] mod_wsgi.c(1599): [client 46.173.4.140:38160]     router.inf_count = 0
+aumsuhere.tmweb.ru [Fri May 08 22:12:52 2020] [error] [pid 16110] mod_wsgi.c(1599): [client 46.173.4.140:38160] AttributeError: 'NoneType' object has no attribute 'inf_count'
+aumsuhere.tmweb.ru [Fri May 08 22:12:52 2020] [error] [pid 16110] mod_wsgi.c(1599): [client 46.173.4.140:38160] 
