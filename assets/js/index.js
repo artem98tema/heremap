@@ -310,7 +310,7 @@ function testFunc(argument)
 function getObjectInfo(id, lat, lng, model, connect_id, on_off, ftype, inf_count, smotr)
 {
 	document.getElementById('form2').style.display = "block";
-	document.getElementById('panel').style.display = "block";
+	showHomeRoutersTable(id);
 	$('#id2').val(id);
 	$('#lat2').val(lat);
 	$('#lng2').val(lng);
@@ -425,6 +425,7 @@ function deleteObjectOnMap()
 
 function showHomeRoutersTable(commutatorId)
 {
+	document.getElementById('panel').style.display = "block";
 	var xhr = new XMLHttpRequest();
 	xhr.open('GET', 'http://aumsuhere.tmweb.ru/api/db/view_home_routers?connect_id=' + commutatorId, false);
 	xhr.send();
@@ -435,10 +436,12 @@ function showHomeRoutersTable(commutatorId)
 		var resultText = '';
 		var jsonData = JSON.parse(xhr.responseText);
 		for (var i = 0; i < jsonData.length; i++) {
-			resultText += '<tr><th scope="row"><small>' + jsonData[i].id + '</th><td><small>' + jsonData[i].model +'</td><td><small>' + jsonData[i].on_off + '</td></small><tr>';
+			//resultText += '<tr><th scope="row"><small>' + jsonData[i].on_off + '</th><td><small>' + jsonData[i].id +'</td><td><small>' + jsonData[i].model + '</td></small><tr>';
+			resultText += '<tr><td>' + jsonData[i].on_off + '</td><td>' + jsonData[i].id +'</td><td>' + jsonData[i].model + '</td></tr>';
 		}
-		$('#someTableBody').html(resultText);
+		$('#clientList').html(resultText);
 		$("#myTable1").trigger('updateCache');
+		console.log(resultText);
 	}
 }
 
