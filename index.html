@@ -7,19 +7,23 @@
     <script src="https://js.api.here.com/v3/3.1/mapsjs-service.js"
             type="text/javascript" charset="utf-8"></script>
     <script type="text/javascript" src="https://js.api.here.com/v3/3.1/mapsjs-mapevents.js"></script>
+
 	<title>NOVOCOM</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <style>
-		::-webkit-scrollbar { /* chrome based /
-            width: 0px;  / ширина scrollbar'a /
-            background: transparent;  / опционально /
+
+
+
+        ::-webkit-scrollbar { /* chrome based */
+            width: 0px;  /* ширина scrollbar'a */
+            background: transparent;  /* опционально */
         }
 
-        #tes{
-            -ms-overflow-style: none;  / IE 10+ /
-            scrollbar-width: none; / Firefox */
+        html{
+            -ms-overflow-style: none;  /* IE 10+ */
+            scrollbar-width: none; /* Firefox */
         }
-		
+
         @font-face{
             font-family: 'MontserratBold';
             src:url(assets/fonts/Montserrat-Bold.woff);
@@ -145,7 +149,7 @@
     </header>
     <div class="row map">
 
-        <div  class="col-sm">
+        <div   class="col-sm">
             <div style="position: fixed;overflow: auto;height: 80vh;z-index: 10;left: 100px;top: 90px;display: none;padding-top: 18px;padding-bottom: 18px;margin-top: 5px" id="tes" class="try">
                 <div style="display: flex;justify-content: space-around">
                     <img style="display: inline" src="assets/image/Frame.png">
@@ -203,7 +207,7 @@
 								<option>Витая пара</option>
 								<option>Оптоволокно</option>
 							</select><br>
-						  
+
 						  <label for="connectType">Тип соединения:</label><br>
                           <input type="text" id="connectType" name="connectType"><br>
 
@@ -218,7 +222,7 @@
             </div>
             <a onclick="show()" id="add-button" style="" href="#"><img  style="position: fixed;top: 120px;left: 105px;z-index: 10;" src="assets/image/Button_add.png"></a>
 
-            <div style="width: 100%; height:  650px;" id="mapContainer"></div>
+            <div style="width: 100%; height:  630px;" id="mapContainer"></div>
 
             <div style=" padding-left: 10px;background:rgba(229, 229, 229, 1);;width: 400px;position: fixed;z-index: 10;right: 600px;top: 10px;display: none;padding-top: 18px;padding-bottom: 18px;margin-top: 5px;border-radius: 9px" id="panel" class="panel panel-default">
 
@@ -300,25 +304,18 @@
                         <option>Витая пара</option>
 						<option>Оптоволокно</option>
                     </select><br>
-					
+
 					<label for="connectType2">Тип соединения:</label><br>
                     <input type="text" id="connectType2" name="connectType2"><br>
 
                     <div style="margin-left: -30px;" >
                         <a onclick="updateObjectOnMap()" style="padding: 4px;background: rgb(92 ,92, 92);border-radius: 9px" href="#">Изменить <img style="margin-left: 5px;margin-right: 5px" src="assets/image/pencil-alt-solid%201.png"></a>
                         <a onclick="deleteObjectOnMap()" style="padding: 4px;background: rgb(92 ,92, 92);border-radius: 9px" href="#">Удалить <img style="margin-left: 5px;margin-right: 5px" src="assets/image/Vector%20(1).png"></a>
-						<a href="#" style="padding: 4px;background: rgb(92 ,92, 92);border-radius: 9px" onclick="disableRouter()">Power</a>
 
+						<a href="#" style="padding: 4px;background: rgb(92 ,92, 92);border-radius: 9px" onclick="disableRouter()">Power</a>
+                        
                     </div>
                 </form>
-<!--                <div style="" >-->
-<!--                    <a onclick="addNewObjectOnMap()" style="padding: 6px;background: rgb(92 ,92, 92);border-radius: 9px" href="#">Изменить <img style="margin-left: 5px;margin-right: 5px" src="assets/image/Vector.png"></a>-->
-<!--                    <a onclick="addNewObjectOnMap()" style="padding: 4px;background: rgb(92 ,92, 92);border-radius: 9px" href="#">Удалить <img style="margin-left: 5px;margin-right: 5px" src="assets/image/Vector%20(1).png"></a>-->
-
-
-<!--                </div>-->
-<!--                <button onclick="updateObjectOnMap()">Отправить</button>-->
-<!--                <button onclick="deleteObjectOnMap()">Удалить</button>-->
             </div>
         </div>
 
@@ -359,7 +356,7 @@ function show() {
         ;
     }
 }
-
+window.addEventListener('resize', () => map.getViewPort().resize());
 
 </script>
 <script src="assets/js/index.js"></script>
