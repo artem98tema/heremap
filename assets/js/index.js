@@ -286,6 +286,7 @@ function addDOMMarker(map, color, lngARG, latARG, idARG, modelARG, connect_idARG
 			//clonedElement.addEventListener('mousedown', function(){testFunc("TESTARG");});
 			//clonedElement.addEventListener('mousedown', function(){testFunc("lng=" + lngARG + " lat=" + latARG);});
 			clonedElement.addEventListener('mousedown', function(){getObjectInfo(idARG, latARG, lngARG, modelARG, connect_idARG, on_offARG, ftypeARG, inf_countARG, smotrARG, cabelTypeARG, connectTypeARG);});
+			clonedElement.addEventListener('dblclick', function(){testFunc('1');});
 		},
 	// the function is called every time marker leaves the viewport
 		onDetach: function(clonedElement, domIcon, domMarker) {
@@ -322,6 +323,26 @@ function getObjectInfo(id, lat, lng, model, connect_id, on_off, ftype, inf_count
 	$('#smotr2').val(smotr);
 	$('#cabelType2').val(cabelType);
 	$('#connectType2').val(connectType);
+}
+
+function disableRouter()
+{
+	var check = confirm('Вы собираетесь нажать на питание роутера с ID=' + $('#id2').val() + ' Продолжить?' );
+	if (check == false)
+		return;
+	else
+	{
+	var xhr = new XMLHttpRequest();
+		// 2. Конфигурируем его: GET-запрос на URL
+	xhr.open('GET', 'http://aumsuhere.tmweb.ru/api/db/off/' + $('#id2').val(), false);
+		// 3. Отсылаем запрос
+	xhr.send();
+
+	if (xhr.status == 200) {
+		  location.reload();
+	}
+
+	}
 }
 
 function addNewObjectOnMap()
