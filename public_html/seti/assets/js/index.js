@@ -305,8 +305,7 @@ function addDOMMarker(map, color, lngARG, latARG, idARG, modelARG, connect_idARG
 			//clonedElement.addEventListener('mousedown', function(){testFunc("TESTARG");});
 			//clonedElement.addEventListener('mousedown', function(){testFunc("lng=" + lngARG + " lat=" + latARG);});
 			clonedElement.addEventListener('mousedown', function(){getObjectInfo(idARG, latARG, lngARG, modelARG, connect_idARG, on_offARG, ftypeARG, inf_countARG, smotrARG, cabelTypeARG, connectTypeARG);});
-			clonedElement.addEventListener('dblclick', function(){testFunc('1');});
-			clonedElement.addEventListener('mousedown', function(){getObjectInfo(idARG, latARG, lngARG, modelARG, connect_idARG, on_offARG, ftypeARG, inf_countARG, smotrARG, cabelTypeARG, connectTypeARG);});
+			//clonedElement.addEventListener('dblclick', function(){testFunc('1');});
 		},
 	// the function is called every time marker leaves the viewport
 		onDetach: function(clonedElement, domIcon, domMarker) {
