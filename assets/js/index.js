@@ -36,7 +36,7 @@ lng('http://aumsuhere.tmweb.ru/api/db/view_routers')
     .then((data)=>{
         console.log(data)
     });
-	
+
 
 //------------------------------------------------------------------------------------------
 
@@ -57,7 +57,7 @@ lng('http://aumsuhere.tmweb.ru/api/db/view_routers')
             center: { lng:37.7575 , lat: 44.7236 }
         });
 
-	
+
 function addMarkersToMap(map) {
 
 
@@ -68,9 +68,9 @@ function addMarkersToMap(map) {
 	  var lineHierarchy = 4;
 	  var color = 'blue';
 	  var textMarker = 'M';
-	  
-		
-		
+
+
+
 		var xhr = new XMLHttpRequest();
 		// 2. Конфигурируем его: GET-запрос на URL
 		xhr.open('GET', all, false);
@@ -80,11 +80,11 @@ function addMarkersToMap(map) {
 		if (xhr.status != 200) {
 		  // обработать ошибку
 		  alert( xhr.status + ': ' + xhr.statusText ); // пример вывода: 404: Not Found
-		} 
+		}
 		//-----------------------------------------СТАРЫЙ КОД----------------------------------------------
 		/*B
 		else {
-		 
+
 		  var jsonData = JSON.parse(xhr.responseText); // responseText -- текст ответа.
 			for (var i = 0; i < jsonData.length; i++) {
 				var counter = jsonData[i];
@@ -95,7 +95,7 @@ function addMarkersToMap(map) {
 				{
 					lineString[i] = new H.geo.LineString();
 					lineString[i].pushPoint({lng:counter.lng, lat:counter.lat});
-					
+
 					for (var j = 0; j<jsonData.length; j++)
 					{
 						var connecter = jsonData[j];
@@ -114,16 +114,16 @@ function addMarkersToMap(map) {
 							map.addObject(new H.map.Polyline(lineString[i], { style: { lineWidth: lineHierarchy }}));
 						}
 					}
-					
-					
+
+
 				}
 			}
-						
+
 		}
 		*/
 		//----------------------------------------НОВЫЙ КОД--------------------------------
 		else {
-		 
+
 		  var jsonData = JSON.parse(xhr.responseText); // responseText -- текст ответа.
 			for (var i = 0; i < jsonData.length; i++) {
 				var counter = jsonData[i];
@@ -161,7 +161,7 @@ function addMarkersToMap(map) {
 					{
 						lineString[i] = new H.geo.LineString();
 						lineString[i].pushPoint({lng:counter.lng, lat:counter.lat});
-						
+
 						for (var j = 0; j<jsonData.length; j++)
 						{
 							var connecter = jsonData[j];
@@ -179,14 +179,14 @@ function addMarkersToMap(map) {
 								}
 								map.addObject(new H.map.Polyline(lineString[i], { style: { lineWidth: lineHierarchy }}));
 							}
-						}		
+						}
 					}
 				}
-			}			
-		}	
+			}
+		}
     }
-	
-	
+
+
 function addDOMMarker(map, color, lngARG, latARG, idARG, modelARG, connect_idARG, on_offARG, ftypeARG, inf_countARG, smotrARG, textMarker)
 {
 	var outerElement = document.createElement('div'),
@@ -252,9 +252,9 @@ function addDOMMarker(map, color, lngARG, latARG, idARG, modelARG, connect_idARG
 	});
 	map.addObject(bearsMarker);
 }
-	
+
 function testFunc(argument)
-{	
+{
 	alert("HELLO WROT!" + argument);
 	return;
 }
@@ -262,6 +262,7 @@ function testFunc(argument)
 function getObjectInfo(id, lat, lng, model, connect_id, on_off, ftype, inf_count, smotr)
 {
 	document.getElementById('form2').style.display = "block";
+	document.getElementById('form22').style.display = "block";
 	$('#id2').val(id);
 	$('#lat2').val(lat);
 	$('#lng2').val(lng);
@@ -275,14 +276,14 @@ function getObjectInfo(id, lat, lng, model, connect_id, on_off, ftype, inf_count
 
 function addNewObjectOnMap()
 {
-	
-	if(($('#ftype').val() == '') || ($('#connect_id').val() == '') || ($('#inf_count').val() == '') || ($('#lat').val() == '') 
+
+	if(($('#ftype').val() == '') || ($('#connect_id').val() == '') || ($('#inf_count').val() == '') || ($('#lat').val() == '')
 		|| ($('#lng').val() == '') || ($('#model').val() == '') || ($('#on_off').val() == ''))
 	{
 		alert("НЕ ВСЕ ПОЛЯ ЗАПОЛНЕНЫ!!!");
 		return;
 	}
-	
+
 	var json = JSON.stringify({
 	  lat: $('#lat').val(),
 	  lng: $('#lng').val(),
@@ -293,28 +294,28 @@ function addNewObjectOnMap()
 	  inf_count: $('#inf_count').val(),
 	  smotr: "testField",
 	});
-	
+
 	var xhr = new XMLHttpRequest();
 	xhr.open("POST", 'http://aumsuhere.tmweb.ru/api/db/add_router', true);
     xhr.setRequestHeader('Content-type', 'application/json');
- 
+
     xhr.send(json);
-	
+
 	console.log(xhr.responseText);
-	
+
 	//alert(json);
 	return;
 }
 
 function updateObjectOnMap()
 {
-	if(($('#ftype2').val() == '') || ($('#connect_id2').val() == '') || ($('#inf_count2').val() == '') || ($('#lat2').val() == '') 
+	if(($('#ftype2').val() == '') || ($('#connect_id2').val() == '') || ($('#inf_count2').val() == '') || ($('#lat2').val() == '')
 		|| ($('#lng2').val() == '') || ($('#model2').val() == '') || ($('#on_off2').val() == '') || ($('#id2').val() == '') || ($('#smotr2').val() == ''))
 	{
 		alert("НЕ ВСЕ ПОЛЯ ЗАПОЛНЕНЫ!!!");
 		return;
 	}
-	
+
 	var json = JSON.stringify({
 	  lat: $('#lat2').val(),
 	  lng: $('#lng2').val(),
@@ -326,13 +327,13 @@ function updateObjectOnMap()
 	  smotr: $('#smotr2').val(),
 	  id: $('#id2').val(),
 	});
-	
+
 	var xhr = new XMLHttpRequest();
 	xhr.open("POST", 'http://aumsuhere.tmweb.ru/api/db/update_router', true);
     xhr.setRequestHeader('Content-type', 'application/json');
- 
+
     xhr.send(json);
-	
+
 	console.log(xhr.responseText);
 }
 
@@ -352,7 +353,7 @@ function deleteObjectOnMap()
 }
 
 //http://aumsuhere.tmweb.ru/api/db/delete_by_id/84
-	
+
     var behavior = new H.mapevents.Behavior(new H.mapevents.MapEvents(map));
 
     window.onload = function () {
