@@ -193,12 +193,29 @@ function addMarkersToMap(map) {
 									{
 										lineWork = checkRoute(jsonData, connecter.connect_id, 30); //Максимальное количество шагов поиска сервера
 										if (lineWork == true)
-											lineColor = '#0bb3d9';
+										{	
+											switch(counter.type_of_cabel)
+											{
+												case 'Беспроводное подключение': lineColor = '#000000'; break;
+												case 'Витая пара': lineColor = '#0bb3d9'; break;
+												case 'Оптоволокно': lineColor = '#62a374'; break;
+												default: lineColor = '#d90b42'; break;
+											}
+										}
 										else
 											lineColor = '#d90b42';
 									}
 									else
-										lineColor = '#0bb3d9';
+									{
+										//lineColor = '#0bb3d9';
+										switch(counter.type_of_cabel)
+										{
+											case 'Беспроводное подключение': lineColor = '#000000'; break;
+											case 'Витая пара': lineColor = '#0bb3d9'; break;
+											case 'Оптоволокно': lineColor = '#62a374'; break;
+											default: lineColor = '#d90b42'; break;
+										}
+									}
 								}
 
 
@@ -210,8 +227,10 @@ function addMarkersToMap(map) {
 			}
 		}
     }
-	// #d90b42 - red
-	// #0bb3d9 - blue
+	// #d90b42 - red - нет соединения
+	// #0bb3d9 - blue - витая пара
+	// #000000 - black - беспроводное
+	// #62a374 - green - оптоволокно
 function checkRoute(jsonData, connectId, count)
 {
 	if(count==0)
@@ -350,7 +369,7 @@ function addNewObjectOnMap()
 
 	if(($('#ftype').val() == '') || ($('#connect_id').val() == '') || ($('#inf_count').val() == '') || ($('#lat').val() == '')
 		|| ($('#lng').val() == '') || ($('#model').val() == '') || ($('#on_off').val() == '') || ($('#smotr').val() == '')
-	|| ($('#on_off').val() == 'Выберите') || ($('#ftype').val() == 'Выберите') || ($('#cabelType').val() == '') || ($('#connectType').val() == ''))
+	|| ($('#on_off').val() == 'Выберите') || ($('#ftype').val() == 'Выберите') || ($('#cabelType').val() == 'Выберите') || ($('#connectType').val() == '') )
 	{
 		alert("НЕ ВСЕ ПОЛЯ ЗАПОЛНЕНЫ!!!");
 		return;
@@ -389,7 +408,7 @@ function updateObjectOnMap()
 {
 	if(($('#ftype2').val() == '') || ($('#connect_id2').val() == '') || ($('#inf_count2').val() == '') || ($('#lat2').val() == '')
 		|| ($('#lng2').val() == '') || ($('#model2').val() == '') || ($('#on_off2').val() == '') || ($('#id2').val() == '') || ($('#smotr2').val() == '')
-	|| ($('#on_off2').val() == 'Выберите') || ($('#ftype2').val() == 'Выберите') || ($('#cabelType2').val() == '') || ($('#connectType2').val() == '') )
+	|| ($('#on_off2').val() == 'Выберите') || ($('#ftype2').val() == 'Выберите') || ($('#cabelType2').val() == 'Выберите') || ($('#connectType2').val() == '') )
 	{
 		alert("НЕ ВСЕ ПОЛЯ ЗАПОЛНЕНЫ!!!");
 		return;
