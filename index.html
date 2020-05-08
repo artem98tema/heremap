@@ -184,13 +184,13 @@
                                 </select><br>
 <!--                                <input type="text" id="ftype" name="ftype"><br>-->
 
-                               <label for="connect_id">connect_id:</label><br>
+                               <label for="connect_id">ID вышестоящего устройства:</label><br>
                                 <input type="text" id="connect_id" name="connect_id"><br>
 
 <!--                              <label for="id">id:</label><br>-->
 <!--                                <input type="text" id="id" name="id"><br>-->
 
-                             <label for="inf_count">Linf_count:</label><br>
+                             <label for="inf_count">Количество переданной информации:</label><br>
                               <input type="text" id="inf_count" name="inf_count"><br>
 
                           <label for="lat">Широта:</label><br>
@@ -205,11 +205,17 @@
                            <label for="on_off">вкл/выкл:</label><br>
                     <select  style="width: 182px;border-radius:8px" id="on_off" name="on_off">
                         <option>Выберите</option>
-                        <option>включить</option>
-                        <option>выключить</option>
+                        <option>1</option>
+                        <option>0</option>
                     </select><br>
 				            <label for="smotr">Ответственный:</label><br>
                           <input type="text" id="smotr" name="smotr"><br>
+						  
+						  <label for="cabelType">Тип кабеля:</label><br>
+                          <input type="text" id="cabelType" name="cabelType"><br>
+						  
+						  <label for="connectType">Тип соединения:</label><br>
+                          <input type="text" id="connectType" name="connectType"><br>
 
 
                            </form>
@@ -246,27 +252,31 @@
                     </select><br>
 
 
-                    <label for="connect_id2">connect_id:</label><br>
+                    <label for="connect_id2">ID вышестоящего устройства:</label><br>
                     <input type="text" id="connect_id2" name="connect_id2"><br>
 
-                    <label for="id2">id:</label><br>
+                    <label for="id2">ID редактируемого устройства:</label><br>
                     <input type="text" id="id2" name="id2"><br>
 
-                    <label for="inf_count2">Linf_count:</label><br>
+                    <label for="inf_count2">Количество переданной информации:</label><br>
                     <input type="text" id="inf_count2" name="inf_count2"><br>
 
-                    <label for="lat2">lat:</label><br>
+                    <label for="lat2">Широта:</label><br>
                     <input type="text" id="lat2" name="lat2"><br>
 
-                    <label for="lng2">lng:</label><br>
+                    <label for="lng2">Долгота:</label><br>
                     <input type="text" id="lng2" name="lng2"><br>
 
-                    <label for="model2">model:</label><br>
+                    <label for="model2">Модель роутера:</label><br>
                     <input type="text" id="model2" name="model2"><br>
 
-                    <label for="on_off2">on_off:</label><br>
+                    <label for="on_off2">вкл/выкл:</label><br>
                     <select  style="width: 182px;border-radius:8px" id="on_off2" name="on_off2">
+<<<<<<< HEAD
                         <option>выберите</option>
+=======
+                        <option>Выберите</option>
+>>>>>>> master
                         <option>1</option>
                         <option>0</option>
                     </select><br>
@@ -274,9 +284,16 @@
 
                     <label for="smotr2">Ответственный:</label><br>
                     <input type="text" id="smotr2" name="smotr2"><br>
+					
+					<label for="cabelType2">Тип кабеля:</label><br>
+                    <input type="text" id="cabelType2" name="cabelType2"><br>
+						  
+					<label for="connectType2">Тип соединения:</label><br>
+                    <input type="text" id="connectType2" name="connectType2"><br>
+					
                     <div style="margin-left: -30px;" >
-                        <a onclick="addNewObjectOnMap()" style="padding: 6px;background: rgb(92 ,92, 92);border-radius: 9px" href="#">Изменить <img style="margin-left: 5px;margin-right: 5px" src="assets/image/pencil-alt-solid%201.png"></a>
-                        <a onclick="addNewObjectOnMap()" style="padding: 6px;background: rgb(92 ,92, 92);border-radius: 9px" href="#">Удалить <img style="margin-left: 5px;margin-right: 5px" src="assets/image/Vector%20(1).png"></a>
+                        <a onclick="updateObjectOnMap()" style="padding: 6px;background: rgb(92 ,92, 92);border-radius: 9px" href="#">Изменить <img style="margin-left: 5px;margin-right: 5px" src="assets/image/pencil-alt-solid%201.png"></a>
+                        <a onclick="deleteObjectOnMap()" style="padding: 6px;background: rgb(92 ,92, 92);border-radius: 9px" href="#">Удалить <img style="margin-left: 5px;margin-right: 5px" src="assets/image/Vector%20(1).png"></a>
 
 
                     </div>
@@ -301,8 +318,8 @@ function hide() {
     document.getElementById('add-button').style.display = "block";
 }
 function hide2() {
-    document.getElementById('form22').style.display = "none";
-    document.getElementById('add-button').style.display = "block";
+    document.getElementById('form2').style.display = "none";
+    //document.getElementById('add-button').style.display = "block";
 }
 
 function est(id) {
